@@ -1,0 +1,367 @@
+/* 基礎設定 */
+:root {
+    --primary-color: #0c1a32;
+    --secondary-color: #1a7fae;
+    --accent-color: #d44d76;
+    --light-color: #1d2b4a;
+    --dark-color: #050e1d;
+    --neon-blue: #4db8ff;
+    --neon-pink: #ff6b9d;
+    --text-color: #e0e7ff;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+}
+
+body {
+    background-color: var(--primary-color);
+    background-image: 
+        radial-gradient(circle at 75% 25%, rgba(77, 184, 255, 0.08) 0%, transparent 50%),
+        linear-gradient(to bottom, rgba(5, 14, 29, 0.8), var(--dark-color));
+    color: var(--text-color);
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 頁首樣式 */
+header {
+    background-color: rgba(10, 25, 47, 0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 209, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 209, 255, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px var(--neon-blue);
+    letter-spacing: 1px;
+}
+
+.slogan {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+/* 導航欄 */
+nav {
+    background: linear-gradient(90deg, 
+        rgba(0, 209, 255, 0.1) 0%, 
+        rgba(0, 209, 255, 0.3) 50%, 
+        rgba(0, 209, 255, 0.1) 100%);
+    padding: 1rem 0;
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(0, 209, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 209, 255, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 1.5rem;
+    position: relative;
+}
+
+nav a {
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: white;
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+nav li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-blue);
+    transition: width 0.3s;
+}
+
+nav li:hover::after {
+    width: 100%;
+}
+
+/* 主要內容 */
+.hero {
+    text-align: center;
+    padding: 3rem 0;
+    background: rgba(17, 34, 64, 0.6);
+    margin: 2rem 0;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 209, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 209, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, 
+        rgba(0, 240, 255, 0.1) 0%, 
+        transparent 70%);
+    animation: rotate 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.services-overview {
+    margin: 3rem 0;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 209, 255, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--neon-blue), 
+        transparent);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 209, 255, 0.2);
+    border-color: var(--neon-blue);
+}
+
+.service-card:hover::before {
+    transform: translateX(100%);
+}
+
+.service-card h3 {
+    color: var(--neon-blue);
+    margin-top: 0;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+}
+
+/* 頁尾 */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+address {
+    font-style: normal;
+    margin-top: 0.5rem;
+}
+
+/* 服務詳細頁面 */
+.service-detail-card {
+    background: var(--light-color);
+    border: 1px solid rgba(0, 209, 255, 0.3);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.service-detail-card img {
+    transition: transform 0.3s ease;
+}
+
+.service-detail-card:hover img {
+    transform: scale(1.03);
+}
+
+.service-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.service-desc, .service-process {
+    padding: 1rem;
+}
+
+/* 聯絡頁面 */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contact-info {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.contact-form {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+textarea {
+    min-height: 150px;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+}
+
+.required {
+    color: var(--accent-color);
+}
+
+.map-container {
+    margin-top: 2rem;
+    height: 300px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0.5rem 0;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .service-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0.5rem 0;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}

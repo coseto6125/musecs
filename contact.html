@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡我們 | 水慕資雲</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/blue_web.jpeg') center/cover no-repeat;">
+        <div class="container">
+            <h1>水慕資雲有限公司</h1>
+            <p class="slogan">守護數位資產，構築安全未來</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於水慕資雲</a></li>
+                <li><a href="services.html">資安服務</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2>聯絡我們</h2>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>公司資訊</h3>
+                <p><strong>地址：</strong>臺北市中山區復興北路48號3樓</p>
+                <p><strong>電話：</strong>02-1234-5678</p>
+                <p><strong>電子郵件：</strong>contact@shuimuziyun.com</p>
+                <p><strong>營業時間：</strong>週一至週五 09:00-18:00</p>
+
+                <div class="map-container">
+                    <p>[Google 地圖嵌入位置]</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>諮詢表單</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">姓名 <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">電子郵件 <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">聯絡電話</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">諮詢服務</label>
+                        <select id="service" name="service">
+                            <option value="">請選擇服務項目</option>
+                            <option value="software-testing">軟體檢測服務</option>
+                            <option value="web-security">網頁資安檢測</option>
+                            <option value="threat-analysis">資安威脅分析</option>
+                            <option value="cloud-architecture">雲端應用架構建置</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">諮詢內容 <span class="required">*</span></label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit">送出詢問</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 水慕資雲有限公司 版權所有</p>
+            <address>臺北市中山區復興北路48號3樓</address>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('感謝您的詢問，我們將儘快與您聯絡！');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
